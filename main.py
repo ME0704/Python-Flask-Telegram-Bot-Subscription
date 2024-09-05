@@ -126,7 +126,7 @@ async def main() -> None:
             else:
                 await add_subscription(user_id,"month")
                 # schedule user removal
-                due = timedelta(days=30)
+                due = timedelta(minutes=2)
                 application.job_queue.run_once(remove_subscription,due,user_id=user_id)
                 # link expires because if valid user might use it even after an ended subscription
                 expire_date = datetime.now() + timedelta(days=1)

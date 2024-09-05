@@ -62,7 +62,7 @@ async def choose(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         :SECURITY 101
         """
         name = f"s{user.id}"
-        due = timedelta(seconds=60)
+        due = timedelta(seconds=5)
         current_jobs = context.job_queue.get_jobs_by_name(name)
         if(current_jobs):
             for job in current_jobs:
